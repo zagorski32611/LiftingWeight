@@ -1,0 +1,42 @@
+@model LiftingWeight.Models.LiftingProgress
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>LiftingProgress</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkoutDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkoutDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WeightUsed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WeightUsed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Repititions)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Repititions)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Exercise)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Exercise.ExerciseId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ProgressId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,48 @@
+@model LiftingWeight.Models.Exercises
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Exercises</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ExerciseName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ExerciseName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MachineOrFree)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MachineOrFree)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TargetedMuscle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TargetedMuscle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GymOrHome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GymOrHome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Current)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Current)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ExerciseId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
