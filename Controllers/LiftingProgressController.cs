@@ -64,7 +64,14 @@ namespace LiftingWeight.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ExerciseId"] = new SelectList(_context.Exercises, "ExerciseId", "ExerciseId", liftingProgress.ExerciseId);
+            
+            using (var ex  = new WeightLiftingDbContext())
+            {
+                var exerciseNames = _context.Exercises
+                                    .Include(exer => exer.ExerciseName)
+                                    .ToListAsync();
+            }
+            //object v = ViewData["ExerciseId"] = new SelectList(exerciseNames, "Exercise Name", dataTextField: "Exercise Name", exerciseNames);
             return View(liftingProgress);
         }
 
@@ -117,7 +124,7 @@ namespace LiftingWeight.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ExerciseId"] = new SelectList(_context.Exercises, "ExerciseId", "ExerciseId", liftingProgress.ExerciseId);
+            ViewData["ExerciseName"] = new SelectList(_context.Exercises, "Exercise", "Exercise", liftingProgress.Exercise.ExerciseName);
             return View(liftingProgress);
         }
 
