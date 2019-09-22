@@ -36,6 +36,7 @@ namespace LiftingWeight.Controllers
             var liftingProgress = await _context.LiftingProgress
                 .Include(l => l.Exercise)
                 .FirstOrDefaultAsync(m => m.ProgressId == id);
+                
             if (liftingProgress == null)
             {
                 return NotFound();

@@ -1,5 +1,5 @@
 FROM mcr.microsoft.com/dotnet/core/runtime:2.2
 
-COPY /home/joe/development/netcore/LiftingWeight/LiftingWeight/bin/Release/ app/
+COPY /Docker_Weight/bin/Release/netcoreapp2.2/LiftingWeight.dll app/
 
 ENTRYPOINT ["dotnet", "app/LiftingWeight.dll"]

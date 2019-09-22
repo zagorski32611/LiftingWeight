@@ -12947,11 +12947,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/joe/development/netcore/LiftingWeight/LiftingWeight/LiftingWeight.csproj",
+      "projectUniqueName": "/home/joe/development/netcore/Docker_Weight/LiftingWeight/LiftingWeight.csproj",
       "projectName": "LiftingWeight",
-      "projectPath": "/home/joe/development/netcore/LiftingWeight/LiftingWeight/LiftingWeight.csproj",
+      "projectPath": "/home/joe/development/netcore/Docker_Weight/LiftingWeight/LiftingWeight.csproj",
       "packagesPath": "/home/joe/.nuget/packages/",
-      "outputPath": "/home/joe/development/netcore/LiftingWeight/LiftingWeight/obj/",
+      "outputPath": "/home/joe/development/netcore/Docker_Weight/LiftingWeight/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
