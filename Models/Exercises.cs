@@ -11,7 +11,6 @@ namespace LiftingWeight.Models
         {
             LiftingProgress = new HashSet<LiftingProgress>();
         }
-
         public int ExerciseId { get; set; }
         public string ExerciseName { get; set; }
         public bool? MachineOrFree { get; set; }
