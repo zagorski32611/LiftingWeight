@@ -61,6 +61,11 @@ namespace LiftingWeight
             //app.UseMvcWithDefaultRoute();
             app.UseMvc(routes =>
             {
+               routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.UseMvc(routes =>
+            {
                routes.MapRoute("default", "{controller=Exercises}/{action=Index}/{id?}");
             });
 
