@@ -14,17 +14,20 @@ namespace LiftingWeight.Controllers
 {
     public class ExercisesController : Controller
     {
-    public readonly WeightLiftingDbContext _context;
+        private readonly WeightLiftingDbContext context;
 
-    public ExercisesController(WeightLiftingDbContext context)
-    {
-        _context = context;
-    }
-    
+        public WeightLiftingDbContext Context => context;
+
         // GET: Exercises
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Exercises.ToListAsync());
+            ViewData["LastExercise"] = from ex in Context.Exercises 
+                                       where ex.ExerciseId == 4
+                                       select ex.ExerciseName.ToString(); 
+            //var exercises = await _context.Exercises
+            //    .FirstOrDefaultAsync(m => m.ExerciseId == id);
+
+            return View(await Context.Exercises.ToListAsync());
         }
 
         // GET: Exercises/Details/5
@@ -35,7 +38,7 @@ namespace LiftingWeight.Controllers
                 return NotFound();
             }
 
-            var exercises = await _context.Exercises
+            var exercises = await Context.Exercises
                 .FirstOrDefaultAsync(m => m.ExerciseId == id);
             if (exercises == null)
             {
@@ -60,8 +63,8 @@ namespace LiftingWeight.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(exercises);
-                await _context.SaveChangesAsync();
+                Context.Add(exercises);
+                await Context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(exercises);
@@ -75,7 +78,7 @@ namespace LiftingWeight.Controllers
                 return NotFound();
             }
 
-            var exercise = await _context.Exercises.FindAsync(id);
+            var exercise = await Context.Exercises.FindAsync(id);
 
             if(exercise == null)
             {
@@ -100,8 +103,8 @@ namespace LiftingWeight.Controllers
             {
                 try
                 {
-                    _context.Update(ex);
-                    await _context.SaveChangesAsync();
+                    Context.Update(ex);
+                    await Context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -127,7 +130,7 @@ namespace LiftingWeight.Controllers
                 return NotFound();
             }
 
-            var exercises = await _context.Exercises
+            var exercises = await Context.Exercises
                 .FirstOrDefaultAsync(m => m.ExerciseId == id);
             if (exercises == null)
             {
@@ -142,15 +145,15 @@ namespace LiftingWeight.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var exercises = await _context.Exercises.FindAsync(id);
-            _context.Exercises.Remove(exercises);
-            await _context.SaveChangesAsync();
+            var exercises = await Context.Exercises.FindAsync(id);
+            Context.Exercises.Remove(exercises);
+            await Context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ExercisesExists(int id)
         {
-            return _context.Exercises.Any(e => e.ExerciseId == id);
+            return Context.Exercises.Any(e => e.ExerciseId == id);
         }
     }
 }

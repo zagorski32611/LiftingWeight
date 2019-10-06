@@ -27,7 +27,8 @@ namespace LiftingWeight.Models
 
         [Display(Name = "Current?")]
         public bool? Current { get; set; }
-
+ 
         public virtual ICollection<LiftingProgress> LiftingProgress { get; set; }
+
     }
 }
