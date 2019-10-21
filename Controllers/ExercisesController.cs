@@ -21,11 +21,14 @@ namespace LiftingWeight.Controllers
         // GET: Exercises
         public async Task<IActionResult> Index()
         {
-            ViewData["LastExercise"] = from ex in Context.Exercises 
-                                       where ex.ExerciseId == 4
-                                       select ex.ExerciseName.ToString(); 
-            //var exercises = await _context.Exercises
-            //    .FirstOrDefaultAsync(m => m.ExerciseId == id);
+            ViewBag.True = "Home";
+
+            ViewBag.Boolean = new Exercises()
+            {
+                MachineOrFree = true,
+                GymOrHome = true
+
+            };
 
             return View(await Context.Exercises.ToListAsync());
         }
