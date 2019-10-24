@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LiftingWeight.Models;
+using LiftingWeight.Controllers;
 using System.Text.Encodings.Web;
 
 
@@ -14,16 +15,17 @@ namespace LiftingWeight.Controllers
 {
     public class ExercisesController : Controller
     {
-    public readonly WeightLiftingDbContext _context;
+        private readonly WeightLiftingDbContext _context;
+        public ExercisesController(WeightLiftingDbContext context)
+        {
+            _context = context;
+        }
 
-    public ExercisesController(WeightLiftingDbContext context)
-    {
-        _context = context;
-    }
-    
+
         // GET: Exercises
         public async Task<IActionResult> Index()
         {
+
             return View(await _context.Exercises.ToListAsync());
         }
 

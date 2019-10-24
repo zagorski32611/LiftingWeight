@@ -20,7 +20,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="MachineOrFree" class="control-label"></label>
-                <input asp-for="MachineOrFree" class="form-control" />
+                <!--<input asp-for="MachineOrFree" class="form-control" />-->
+                <select id="MorFTrueFalse" name="MorFTrueFalse">
+                    <option value='1'>Machine</option>
+                    <option value='0'>Free Weight</option>
+                </select>
                 <span asp-validation-for="MachineOrFree" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -30,7 +34,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="GymOrHome" class="control-label"></label>
-                <input asp-for="GymOrHome" class="form-control" />
+                <select id="GoHTrueFalse" name="GoHTrueFalse">
+                    <option value='1'>Gym</option>
+                    <option value='0'>Home</option>
+                </select>
                 <span asp-validation-for="GymOrHome" class="text-danger"></span>
             </div>
             <div class="form-group">
