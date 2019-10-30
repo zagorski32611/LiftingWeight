@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace LiftingWeight.Models
 {
@@ -29,6 +30,6 @@ namespace LiftingWeight.Models
         public bool? Current { get; set; }
  
         public virtual ICollection<LiftingProgress> LiftingProgress { get; set; }
-
+        
     }
 }

@@ -35,8 +35,8 @@ namespace LiftingWeight
             });
 
             services.AddDbContext<WeightLiftingDbContext>(options =>
-                options.UseSqlServer("Server=tcp:wlsql01.database.windows.net,1433;Initial Catalog=WeightLiftingDb;Persist Security Info=False;User ID=jzagorski;Password=password1#;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
-
+                //options.UseSqlServer("Server=tcp:wlsql01.database.windows.net,1433;Initial Catalog=WeightLiftingDb;Persist Security Info=False;User ID=jzagorski;Password=password1#;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+                options.UseSqlServer("Server=localhost;Initial Catalog=WeightLiftingDb;Persist Security Info=False;User ID=sa;Password=password1#;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

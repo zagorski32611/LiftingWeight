@@ -25,8 +25,11 @@ namespace LiftingWeight.Controllers
         // GET: Exercises
         public async Task<IActionResult> Index()
         {
+            List<Exercises> listofExercises = await _context.Exercises.ToListAsync();
+            
+            List<Exercises> active_exercises = FindActiveExercises(listofExercises);
 
-            return View(await _context.Exercises.ToListAsync());
+            return View(active_exercises);
         }
 
         // GET: Exercises/Details/5
@@ -153,6 +156,22 @@ namespace LiftingWeight.Controllers
         private bool ExercisesExists(int id)
         {
             return _context.Exercises.Any(e => e.ExerciseId == id);
+        }
+
+
+        [NonAction]
+        public List<Exercises> FindActiveExercises(List<Exercises> all_exercises)
+        {
+            List<Exercises> current_list = new List<Exercises>();
+
+            foreach(var ex in all_exercises)
+            {
+                if(ex.Current == true)
+                {
+                    current_list.Add(ex);
+                }
+            }
+            return current_list;
         }
     }
 }

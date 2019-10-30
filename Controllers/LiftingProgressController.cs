@@ -49,6 +49,8 @@ namespace LiftingWeight.Controllers
         public IActionResult Create()
         {
             ViewData["ExerciseId"] = new SelectList(_context.Exercises, "ExerciseId", "ExerciseId");
+            ViewData["ExerciseName"] = new SelectList(_context.Exercises, "ExerciseName", "ExerciseName");
+            
             return View();
         }
 
