@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\jzagorski\\Documents\\CodeFiles\\LiftingWeight\\LiftingWeight.csproj",
+  "FilePath": "/home/joe/development/netcore/Docker_Weight/LiftingWeight/LiftingWeight.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2956,98 +2956,98 @@
         }
       }
     ],
-    "CSharpLanguageVersion": 703
+    "CSharpLanguageVersion": 800
   },
   "RootNamespace": "LiftingWeight",
   "Documents": [
     {
-      "FilePath": "Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FilePath": "Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views/Shared/_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FilePath": "Views/_ViewStart.cshtml",
+      "TargetPath": "Views/_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\LiftingProgress\\Index.cshtml",
-      "TargetPath": "Views\\LiftingProgress\\Index.cshtml",
+      "FilePath": "Views/Home/Index.cshtml",
+      "TargetPath": "Views/Home/Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\LiftingProgress\\Details.cshtml",
-      "TargetPath": "Views\\LiftingProgress\\Details.cshtml",
+      "FilePath": "Views/Home/Privacy.cshtml",
+      "TargetPath": "Views/Home/Privacy.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "Views/LiftingProgress/Delete.cshtml",
+      "TargetPath": "Views/LiftingProgress/Delete.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\LiftingProgress\\Edit.cshtml",
-      "TargetPath": "Views\\LiftingProgress\\Edit.cshtml",
+      "FilePath": "Views/LiftingProgress/Details.cshtml",
+      "TargetPath": "Views/LiftingProgress/Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FilePath": "Views/Exercises/Delete.cshtml",
+      "TargetPath": "Views/Exercises/Delete.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Shared\\_CookieConsentPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FilePath": "Views/Exercises/Details.cshtml",
+      "TargetPath": "Views/Exercises/Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "Views/_ViewImports.cshtml",
+      "TargetPath": "Views/_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FilePath": "Views/LiftingProgress/Edit.cshtml",
+      "TargetPath": "Views/LiftingProgress/Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\LiftingProgress\\Create.cshtml",
-      "TargetPath": "Views\\LiftingProgress\\Create.cshtml",
+      "FilePath": "Views/LiftingProgress/Create.cshtml",
+      "TargetPath": "Views/LiftingProgress/Create.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\LiftingProgress\\Delete.cshtml",
-      "TargetPath": "Views\\LiftingProgress\\Delete.cshtml",
+      "FilePath": "Views/Exercises/Edit.cshtml",
+      "TargetPath": "Views/Exercises/Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Exercises\\Edit.cshtml",
-      "TargetPath": "Views\\Exercises\\Edit.cshtml",
+      "FilePath": "Views/Exercises/Index.cshtml",
+      "TargetPath": "Views/Exercises/Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Exercises\\Index.cshtml",
-      "TargetPath": "Views\\Exercises\\Index.cshtml",
+      "FilePath": "Views/LiftingProgress/Index.cshtml",
+      "TargetPath": "Views/LiftingProgress/Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Exercises\\Details.cshtml",
-      "TargetPath": "Views\\Exercises\\Details.cshtml",
+      "FilePath": "Views/Shared/Error.cshtml",
+      "TargetPath": "Views/Shared/Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "Views/Exercises/Create.cshtml",
+      "TargetPath": "Views/Exercises/Create.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Exercises\\Create.cshtml",
-      "TargetPath": "Views\\Exercises\\Create.cshtml",
+      "FilePath": "Views/Shared/_CookieConsentPartial.cshtml",
+      "TargetPath": "Views/Shared/_CookieConsentPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Exercises\\Delete.cshtml",
-      "TargetPath": "Views\\Exercises\\Delete.cshtml",
+      "FilePath": "Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views/Shared/_Layout.cshtml",
       "FileKind": "mvc"
     }
   ],

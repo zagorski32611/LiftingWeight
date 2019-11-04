@@ -59,10 +59,18 @@ namespace LiftingWeight.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ProgressId,WorkoutDate,WeightUsed,Repititions,ExerciseId")] LiftingProgress liftingProgress)
         {
+            using (var cont = new WeightLiftingDbContext())
+            {
+                var exId =  _context.Exercises
+                            .Select((exercise, Index) => new {exercise.ExerciseId, liftingProgress.ExerciseId.Value});                      
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(liftingProgress);
+                
                 await _context.SaveChangesAsync();
+                
                 return RedirectToAction(nameof(Index));
             }
 
@@ -72,7 +80,8 @@ namespace LiftingWeight.Controllers
                                     .Include(exer => exer.ExerciseName)
                                     .ToListAsync();
             }
-            //object v = ViewData["ExerciseId"] = new SelectList(exerciseNames, "Exercise Name", dataTextField: "Exercise Name", exerciseNames);
+            
+
             return View(liftingProgress);
         }
 
@@ -140,6 +149,7 @@ namespace LiftingWeight.Controllers
             var liftingProgress = await _context.LiftingProgress
                 .Include(l => l.Exercise)
                 .FirstOrDefaultAsync(m => m.ProgressId == id);
+            
             if (liftingProgress == null)
             {
                 return NotFound();
@@ -155,7 +165,9 @@ namespace LiftingWeight.Controllers
         {
             var liftingProgress = await _context.LiftingProgress.FindAsync(id);
             _context.LiftingProgress.Remove(liftingProgress);
+            
             await _context.SaveChangesAsync();
+            
             return RedirectToAction(nameof(Index));
         }
 
