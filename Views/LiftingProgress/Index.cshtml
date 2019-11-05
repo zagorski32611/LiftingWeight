@@ -1,8 +1,5 @@
 @model IEnumerable<LiftingWeight.Models.LiftingProgress>
 
-@{
-    ViewData["Title"] = "Index";
-}
 
 <h1>Index</h1>
 
@@ -22,9 +19,11 @@
                 @Html.DisplayNameFor(model => model.Repititions)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Exercise)
+                @Html.DisplayNameFor(model => model.Exercise.ExerciseName)
             </th>
-            <th></th>
+            <th>
+                
+            </th>
         </tr>
     </thead>
     <tbody>

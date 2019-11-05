@@ -71,7 +71,7 @@ namespace LiftingWeight.Controllers
 
         // GET: Exercises/Edit/5
         public async Task<IActionResult> Edit(int? id)
-        {
+        {   
             if (id == null)
             {
                 return NotFound();
