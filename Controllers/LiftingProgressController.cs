@@ -25,25 +25,41 @@ namespace LiftingWeight.Controllers
             return View(await weightLiftingDbContext.ToListAsync());
         }
 
-        // GET: LiftingProgress/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public ViewResult Details(int? id)
         {
-            if (id == null)
+            Exercises ex = new Exercises();
+            LiftingProgress lift = new LiftingProgress();
+            ExerciseProgressViewModel ex_prog = new ExerciseProgressViewModel()
             {
-                return NotFound();
-            }
+                Exercises = ex,
+                LiftingProgress = lift
+            };
 
-            var liftingProgress = await _context.LiftingProgress
-                .Include(l => l.Exercise)
-                .FirstOrDefaultAsync(m => m.ProgressId == id);
-                
-            if (liftingProgress == null)
-            {
-                return NotFound();
-            }
-
-            return View(liftingProgress);
+            return View(ex_prog);
         }
+
+
+        // GET: LiftingProgress/Details/5
+        //public async Task<IActionResult> Details(int? id)
+        //{
+
+
+        //if (id == null)
+        //{
+        //    return NotFound();
+        //}
+        //
+        //var liftingProgress = await _context.LiftingProgress
+        //    .Include(l => l.Exercise)
+        //    .FirstOrDefaultAsync(m => m.ProgressId == id);
+        //
+        //if (liftingProgress == null)
+        //{
+        //    return NotFound();
+        //}
+        //
+        //return View(liftingProgress);
+        // }
 
         // GET: LiftingProgress/Create
         public IActionResult Create()
@@ -65,8 +81,8 @@ namespace LiftingWeight.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            
-            using (var ex  = new WeightLiftingDbContext())
+
+            using (var ex = new WeightLiftingDbContext())
             {
                 var exerciseNames = _context.Exercises
                                     .Include(exer => exer.ExerciseName)
@@ -158,7 +174,6 @@ namespace LiftingWeight.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool LiftingProgressExists(int id)
         {
             return _context.LiftingProgress.Any(e => e.ProgressId == id);

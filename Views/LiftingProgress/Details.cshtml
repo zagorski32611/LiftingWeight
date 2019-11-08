@@ -1,4 +1,4 @@
-@model LiftingWeight.Models.LiftingProgress
+@model LiftingWeight.Models.ExerciseProgressViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -11,32 +11,32 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.WorkoutDate)
+            @Html.DisplayNameFor(model => model.LiftingProgress.WorkoutDate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.WorkoutDate)
+            @Html.DisplayFor(model => model.LiftingProgress.WorkoutDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.WeightUsed)
+            @Html.DisplayNameFor(model => model.LiftingProgress.WeightUsed)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.WeightUsed)
+            @Html.DisplayFor(model => model.LiftingProgress.WeightUsed)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Repititions)
+            @Html.DisplayNameFor(model => model.LiftingProgress.Repititions)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Repititions)
+            @Html.DisplayFor(model => model.LiftingProgress.Repititions)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Exercise)
+            @Html.DisplayNameFor(model => model.Exercises.ExerciseName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Exercise.ExerciseId)
+            @Html.DisplayFor(model => model.Exercises.ExerciseName)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ProgressId">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.LiftingProgress.ProgressId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
